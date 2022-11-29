@@ -1,0 +1,79 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.content {
+  background-color: aquamarine;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.ball {
+  width: 0px;
+  height: 25vmin;
+  background-color: black;
+  position: absolute;
+  left: 50%; /* half of content  width = ( 100vw / 2 ) ... We didn't calc( 50% - 0.5 * width ) cause : ball -> width = 0px  */
+  top: 50%;
+  transform-origin: center top;
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.ball::after {
+  content: "";
+  width: 10vmin;
+  height: 10vmin;
+  background-color: darkblue;
+  position: absolute;
+  bottom: 0px;
+  left: -5vmin;
+  border-radius: 50%;
+}
+
+/* .test{
+    width: 1px ;
+    height: 100vh ;
+    background-color: darkmagenta ;
+    position: absolute ;
+    left: calc(50% - 0.5px) ;
+
+}
+.test-two{
+    width: 100vw ;
+    height: 1px ;
+    position: absolute;
+    top: calc( 50% - 0.5px) ;
+    background-color: darkmagenta;
+}
+.full-test{
+    background-color: darkorange ;
+    width: 10px ;
+    height: 30vh ;
+    position: absolute ;
+    top: calc( 50% - 15vh ) ;
+    left: calc( 50% - 5px ) ;
+}
+
+.full-test-two{
+    background-color: orange ;
+    width: 30vmin ;
+    height: 10px ;
+    position: absolute ;
+    top: calc( 50% - 5px ) ;
+    left: calc(50% - 15vmin ) ;
+} */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
